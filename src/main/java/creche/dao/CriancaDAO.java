@@ -30,11 +30,11 @@ public class CriancaDAO extends GenericDAO {
                     c.setFoto(rs.getString("foto"));
 
                     // Datas
-                    LocalDate dataNasc = rs.getDate("data_nascimento") != null ? rs.getDate("data_nascimento").toLocalDate() : null;
-                    c.setDataNascimento(dataNasc);
+                    if (rs.getDate("data_nascimento") != null)
+                        c.setDataNascimento(rs.getDate("data_nascimento").toLocalDate());
 
-                    LocalDate dataEmissao = rs.getDate("data_emissao") != null ? rs.getDate("data_emissao").toLocalDate() : null;
-                    c.setDataEmissao(dataEmissao);
+                    if (rs.getDate("data_emissao_certidao") != null)
+                        c.setDataEmissaoCertidao(rs.getDate("data_emissao_certidao").toLocalDate());
 
                     // Enums
                     c.setSexo(Sexo.valueOf(rs.getString("sexo")));
@@ -42,7 +42,7 @@ public class CriancaDAO extends GenericDAO {
                     if (cor != null) c.setCorRaca(CorRaca.valueOf(cor));
 
                     String mob = rs.getString("mob_red");
-                    if (mob != null) {c.setMobilidadeReduzida(MobilidadeReduzida.valueOf(mob));}
+                    if (mob != null) c.setMobilidadeReduzida(MobilidadeReduzida.valueOf(mob));
 
                     // Booleanos
                     c.setPossuiIrmaoCreche(rs.getBoolean("possui_irmao_creche"));
@@ -58,20 +58,19 @@ public class CriancaDAO extends GenericDAO {
                     c.setMunicipioNascimento(rs.getString("municipio_nascimento"));
                     c.setCartorioRegistro(rs.getString("cartorio_registro"));
                     c.setCertidaoNascimentoNum(rs.getString("certidao_nascimento_num"));
-                    c.setOrgaoEmissor(rs.getString("orgao_emissor"));
-                    c.setRestricoesAlimentares(rs.getString("restricoes_alimentares"));
+                    c.setOrgEmissorCertidao(rs.getString("org_emissor_certidao"));
+                    c.setDescricaoRestricoesAlimentares(rs.getString("descricao_restricoes_alimentares"));
                     c.setProblemaSaude(rs.getString("problema_saude"));
-                    c.setTipoAuxilio(rs.getString("tipo_auxilio"));
-                    c.setNumeroNIS(rs.getString("numero_nis"));
-                    c.setCertidao(rs.getString("certidao"));
-                    c.setOrgEmissor(rs.getString("org_emissor"));
 
-                    // Inteiros
-                    c.setIdAlergia(rs.getInt("id_alergia"));
+                    // Inteiros / FKs
+                    c.setIdTipoAuxilio(rs.getInt("id_tipo_auxilio"));
+                    c.setIdResponsavel(rs.getInt("id_responsavel"));
+                    c.setIdClassificacaoEspecial(rs.getInt("id_classificacao_especial"));
                 }
             }
 
         } catch (SQLException e) {
+            System.err.println("Erro ao buscar criança por ID: " + e.getMessage());
             e.printStackTrace();
         }
 

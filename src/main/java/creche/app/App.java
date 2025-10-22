@@ -39,22 +39,22 @@ public class App {
         System.out.println("Município de Nascimento: " + c.getMunicipioNascimento());
         System.out.println("Cartório de Registro: " + c.getCartorioRegistro());
         System.out.println("Certidão de Nascimento nº: " + c.getCertidaoNascimentoNum());
-        System.out.println("Data de Emissão: " + c.getDataEmissao());
-        System.out.println("Órgão Emissor: " + c.getOrgaoEmissor());
+        System.out.println("Data de Emissão da Certidão: " + c.getDataEmissaoCertidao());
+        System.out.println("Órgão Emissor da Certidão: " + c.getOrgEmissorCertidao());
         System.out.println("Restrição Alimentar: " + c.isRestricaoAlimentar());
-        System.out.println("Restrições Alimentares: " + c.getRestricoesAlimentares());
-        System.out.println("ID Alergia: " + c.getIdAlergia());
+        System.out.println("Descrição das Restrições Alimentares: " + c.getDescricaoRestricoesAlimentares());
+        System.out.println("Alergia: " + c.isAlergia());
         System.out.println("Problemas de Saúde: " + c.getProblemaSaude());
         System.out.println("Mobilidade Reduzida: " + c.getMobilidadeReduzida());
         System.out.println("Deficiência Múltipla: " + c.isDefMulti());
         System.out.println("Educação Especial: " + c.isEducEspecial());
         System.out.println("Beneficiário Auxílio Governo: " + c.isResponsavelBeneficiarioAuxilioGov());
-        System.out.println("Tipo de Auxílio: " + c.getTipoAuxilio());
-        System.out.println("Número NIS: " + c.getNumeroNIS());
-        System.out.println("Certidão: " + c.getCertidao());
-        System.out.println("Org. Emissor: " + c.getOrgEmissor());
+        System.out.println("ID Responsável: " + c.getIdResponsavel());
+        System.out.println("ID Tipo Auxílio: " + c.getIdTipoAuxilio());
+        System.out.println("ID Classificação Especial: " + c.getIdClassificacaoEspecial());
+        System.out.println("Status Classificação Especial: " + c.isStatusClassificacaoEspecial());
 
-        // Buscar matrícula ativa da criança
+        // Buscar matrícula
         MatriculaEfetivada m = matriculaDAO.buscarPorIdCrianca(c.getIdCrianca());
         if (m != null) {
             System.out.println("\n=== Dados da Matrícula ===");

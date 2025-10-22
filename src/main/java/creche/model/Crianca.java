@@ -15,22 +15,23 @@ public class Crianca extends Pessoa {
     private String municipioNascimento;
     private String cartorioRegistro;
     private String certidaoNascimentoNum;
-    private LocalDate dataEmissao;
-    private String orgaoEmissor;
+    private LocalDate dataEmissaoCertidao;
+    private String orgEmissorCertidao;
     private boolean restricaoAlimentar;
-    private String restricoesAlimentares;
-    private int idAlergia;
+    private String descricaoRestricoesAlimentares;
+    private boolean alergia;
     private String problemaSaude;
     private MobilidadeReduzida mobilidadeReduzida;
     private boolean defMulti;
     private boolean educEspecial;
     private boolean responsavelBeneficiarioAuxilioGov;
-    private String tipoAuxilio;
-    private String numeroNIS;
-    private String certidao;
-    private String orgEmissor;
+    private int idResponsavel;
+    private int idTipoAuxilio;
+    private int idClassificacaoEspecial;
+    private boolean statusClassificacaoEspecial;
 
-    // Getters e Setters
+    // ===== Getters e Setters =====
+
     public Long getIdCrianca() { return idCrianca; }
     public void setIdCrianca(Long idCrianca) { this.idCrianca = idCrianca; }
 
@@ -64,27 +65,26 @@ public class Crianca extends Pessoa {
     public String getCertidaoNascimentoNum() { return certidaoNascimentoNum; }
     public void setCertidaoNascimentoNum(String certidaoNascimentoNum) { this.certidaoNascimentoNum = certidaoNascimentoNum; }
 
-    public LocalDate getDataEmissao() { return dataEmissao; }
-    public void setDataEmissao(LocalDate dataEmissao) { this.dataEmissao = dataEmissao; }
+    public LocalDate getDataEmissaoCertidao() { return dataEmissaoCertidao; }
+    public void setDataEmissaoCertidao(LocalDate dataEmissaoCertidao) { this.dataEmissaoCertidao = dataEmissaoCertidao; }
 
-    public String getOrgaoEmissor() { return orgaoEmissor; }
-    public void setOrgaoEmissor(String orgaoEmissor) { this.orgaoEmissor = orgaoEmissor; }
+    public String getOrgEmissorCertidao() { return orgEmissorCertidao; }
+    public void setOrgEmissorCertidao(String orgEmissorCertidao) { this.orgEmissorCertidao = orgEmissorCertidao; }
 
     public boolean isRestricaoAlimentar() { return restricaoAlimentar; }
     public void setRestricaoAlimentar(boolean restricaoAlimentar) { this.restricaoAlimentar = restricaoAlimentar; }
 
-    public String getRestricoesAlimentares() { return restricoesAlimentares; }
-    public void setRestricoesAlimentares(String restricoesAlimentares) { this.restricoesAlimentares = restricoesAlimentares; }
+    public String getDescricaoRestricoesAlimentares() { return descricaoRestricoesAlimentares; }
+    public void setDescricaoRestricoesAlimentares(String descricaoRestricoesAlimentares) { this.descricaoRestricoesAlimentares = descricaoRestricoesAlimentares; }
 
-    public int getIdAlergia() { return idAlergia; }
-    public void setIdAlergia(int idAlergia) { this.idAlergia = idAlergia; }
+    public boolean isAlergia() { return alergia; }
+    public void setAlergia(boolean alergia) { this.alergia = alergia; }
 
     public String getProblemaSaude() { return problemaSaude; }
     public void setProblemaSaude(String problemaSaude) { this.problemaSaude = problemaSaude; }
 
     public MobilidadeReduzida getMobilidadeReduzida() { return mobilidadeReduzida; }
     public void setMobilidadeReduzida(MobilidadeReduzida mobilidadeReduzida) { this.mobilidadeReduzida = mobilidadeReduzida; }
-
 
     public boolean isDefMulti() { return defMulti; }
     public void setDefMulti(boolean defMulti) { this.defMulti = defMulti; }
@@ -95,15 +95,15 @@ public class Crianca extends Pessoa {
     public boolean isResponsavelBeneficiarioAuxilioGov() { return responsavelBeneficiarioAuxilioGov; }
     public void setResponsavelBeneficiarioAuxilioGov(boolean responsavelBeneficiarioAuxilioGov) { this.responsavelBeneficiarioAuxilioGov = responsavelBeneficiarioAuxilioGov; }
 
-    public String getTipoAuxilio() { return tipoAuxilio; }
-    public void setTipoAuxilio(String tipoAuxilio) { this.tipoAuxilio = tipoAuxilio; }
+    public int getIdResponsavel() { return idResponsavel; }
+    public void setIdResponsavel(int idResponsavel) { this.idResponsavel = idResponsavel; }
 
-    public String getNumeroNIS() { return numeroNIS; }
-    public void setNumeroNIS(String numeroNIS) { this.numeroNIS = numeroNIS; }
+    public int getIdTipoAuxilio() { return idTipoAuxilio; }
+    public void setIdTipoAuxilio(int idTipoAuxilio) { this.idTipoAuxilio = idTipoAuxilio; }
 
-    public String getCertidao() { return certidao; }
-    public void setCertidao(String certidao) { this.certidao = certidao; }
+    public int getIdClassificacaoEspecial() { return idClassificacaoEspecial; }
+    public void setIdClassificacaoEspecial(int idClassificacaoEspecial) { this.idClassificacaoEspecial = idClassificacaoEspecial; }
 
-    public String getOrgEmissor() { return orgEmissor; }
-    public void setOrgEmissor(String orgEmissor) { this.orgEmissor = orgEmissor; }
+    public boolean isStatusClassificacaoEspecial() { return statusClassificacaoEspecial; }
+    public void setStatusClassificacaoEspecial(boolean statusClassificacaoEspecial) { this.statusClassificacaoEspecial = statusClassificacaoEspecial; }
 }

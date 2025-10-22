@@ -7,13 +7,13 @@ public class MatriculaEfetivada {
     private Long idCrianca;
     private Long idPreMatricula;
     private LocalDate dataMatricula;
-    private String serie; // pode virar enum se quiser
+    private String serie;
     private int anoLetivo;
     private boolean orientRecebida;
     private LocalDate dataDesligamento;
     private SituacaoMatricula situacao;
 
-    // Getters e Setters
+    // === Getters e Setters ===
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
